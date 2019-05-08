@@ -40,7 +40,7 @@ class LSTMs():
         weight_out = tf.Variable(tf.truncated_normal([num_hidden, int(self.output.get_shape()[1])]))
         bias_out = tf.Variable(tf.constant(0.1, shape=[self.output.get_shape()[1]]))
         
-        #Get prediction at last tiem setp
+        #Get prediction at last time setp
         prediction = tf.nn.softmax(tf.matmul(last,weight_out)+bias_out)
         self.prediction = prediction
         
